@@ -1,8 +1,0 @@
-{
-  "name": "Escape Room Review Tracker",
-  "short_name": "Review Tracker",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#07140d",
-  "theme_color": "#123524"
-}
