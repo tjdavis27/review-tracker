@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#123524">
+<title>Escape Room Review Tracker</title>
+
+<style>
+*{box-sizing:border-box}:root{--bg:#07140d;--panel:#102d1c;--panel2:#143823;--white:#fff;--sage:#c9d9cd;--muted:#91a898;--gold:#d8b458;--gold2:#f0d98f;--red:#54252c;--line:rgba(255,255,255,.13)}body{margin:0;background:radial-gradient(circle at 10% 0,rgba(216,180,88,.12),transparent 25%),linear-gradient(180deg,#07140d,#0b2115);color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}button,input{font:inherit}.shell{max-width:1450px;margin:auto;padding:24px}.hero{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,#173c27,#0d2417);box-shadow:0 20px 60px rgba(0,0,0,.28)}.brand{display:flex;align-items:center;gap:15px}.star{width:58px;height:58px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(145deg,var(--gold2),var(--gold));color:#201907;font-size:27px}.eyebrow,.kicker{font-size:10px;color:var(--gold2);font-weight:900;letter-spacing:.15em}h1{margin:4px 0 3px}.hero p,.panel p,.stat p,.dialog-copy{color:var(--sage);font-size:11px;margin:0}.hero-actions,.data-actions,.dialog-actions,.head-buttons{display:flex;gap:8px}.sync-banner{display:flex;align-items:center;gap:8px;margin:11px 0 -3px;padding:9px 12px;border:1px solid var(--line);border-radius:13px;background:#0a1f14;color:var(--sage);font-size:10px}.sync-dot{width:8px;height:8px;border-radius:50%;background:#d8b458}.sync-dot.good{background:#79d6a7}.sync-dot.bad{background:#ff9dad}.sync-banner strong{color:#fff}.tabs{display:flex;gap:7px;margin:14px 0;padding:7px;border:1px solid var(--line);border-radius:17px;background:#07170f;overflow:auto}.tab{border:0;background:transparent;color:var(--sage);padding:10px 15px;border-radius:12px;font-weight:900;cursor:pointer}.tab.active{background:#fbf8ef;color:#102d1c}.view{display:none}.view.active{display:block}.btn{border:1px solid transparent;border-radius:12px;padding:10px 14px;font-weight:900;cursor:pointer}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.gold{background:linear-gradient(145deg,var(--gold2),var(--gold));color:#211a08}.btn.secondary,.btn.ghost{background:rgba(255,255,255,.07);border-color:var(--line);color:#fff}.btn.ghost{background:transparent}.btn.danger{background:var(--red);border-color:rgba(255,255,255,.08);color:#ffd9df}.btn.small{padding:7px 10px;font-size:10px}.stats{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:11px}.stat,.panel{border:1px solid var(--line);background:linear-gradient(180deg,#102d1c,#0d2417);border-radius:20px}.stat{padding:16px;min-height:145px}.stat.featured{background:radial-gradient(circle at right top,rgba(216,180,88,.16),transparent 34%),linear-gradient(180deg,#1e5134,#102d1c);border-color:rgba(216,180,88,.3)}.stat>span{font-size:9px;color:var(--sage);text-transform:uppercase;font-weight:900}.stat>strong{display:block;font-size:35px;margin:9px 0}.stat>strong.text{font-size:20px}.stat small{font-size:16px;color:var(--gold2)}.stat footer{display:flex;justify-content:space-between;font-size:10px;color:var(--sage);margin-top:7px}.progress{height:10px;background:#06150c;border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#8f7029,var(--gold2));border-radius:inherit}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:13px}.panel{padding:18px;margin-bottom:13px}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:13px}h2{margin:3px 0 0;font-size:17px}.leader{display:grid;grid-template-columns:42px 1.2fr .7fr .7fr .7fr;gap:8px;align-items:center;padding:10px 6px;border-bottom:1px solid rgba(255,255,255,.08)}.leader:last-child{border:0}.rank{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:rgba(216,180,88,.1);border:1px solid rgba(216,180,88,.22);color:var(--gold2);font-size:10px;font-weight:900}.name{font-weight:900}.ml{font-size:8px;color:var(--muted);text-transform:uppercase;font-weight:900}.mv{font-size:13px;font-weight:900;margin-top:2px}.gain{color:var(--gold2)}.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick{padding:14px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035);border-radius:15px;display:flex;justify-content:space-between;align-items:center;gap:12px}.quick span{display:block;color:var(--muted);font-size:10px;margin-top:4px}.counter,.goal{display:flex;align-items:center;gap:9px}.round{width:41px;height:41px;border-radius:50%;border:1px solid var(--line);color:#fff;font-size:22px;font-weight:900;cursor:pointer}.round.plus{background:#2f6b47}.round.minus{background:#54252c}.counter strong{font-size:21px;min-width:42px;text-align:center}.goal input{width:75px}.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.card{padding:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.035);border-radius:17px}.card h3{margin:0}.counts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:11px 0}.count{background:#081a10;padding:9px;border-radius:11px;text-align:center}.count span{display:block;color:var(--muted);font-size:8px;text-transform:uppercase;font-weight:900}.count strong{font-size:18px;display:block;margin-top:3px}.card-actions{display:flex;gap:7px;align-items:center}.card-actions .btn{margin-left:auto}.loc-progress{margin:10px 0}.loc-sub{display:flex;justify-content:space-between;color:var(--sage);font-size:9px;margin-top:4px}.reset{display:flex;justify-content:space-between;align-items:center;gap:15px}.reset>div:last-child{display:flex;gap:8px}.history-layout{display:grid;grid-template-columns:1.35fr 1fr;gap:13px}.scroll{max-height:560px;overflow:auto}.hist{display:grid;grid-template-columns:115px 100px 1fr;gap:7px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:10px}.hist .time{color:var(--muted)}.hist .type{color:var(--gold2);font-weight:900}.archive{padding:10px;border:1px solid rgba(255,255,255,.09);border-radius:13px;margin-bottom:7px;background:rgba(255,255,255,.025)}.archive strong,.archive span{display:block}.archive span{color:var(--muted);font-size:9px;margin-top:4px;line-height:1.4}.file{position:relative;overflow:hidden}.file input{position:absolute;inset:0;opacity:0}.app-footer{display:flex;justify-content:space-between;color:var(--muted);font-size:9px;padding:10px 3px}dialog{border:1px solid rgba(216,180,88,.25);border-radius:19px;background:#0d2417;color:#fff;padding:0}dialog::backdrop{background:rgba(0,0,0,.72)}.dialog{width:min(590px,92vw);padding:20px}.dialog label{display:block;color:var(--sage);font-size:10px;font-weight:900;margin:10px 0}.dialog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.dialog-actions{justify-content:flex-end;margin-top:14px}.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:15px}.check-item{display:flex!important;align-items:center;gap:9px;padding:11px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.035);font-size:12px!important;color:#fff!important;margin:0!important}.check-item input{width:auto;margin:0;accent-color:#d8b458}input{width:100%;background:#07170f;color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:11px;padding:10px;outline:none}input:focus{border-color:rgba(216,180,88,.55)}.empty{padding:18px;border:1px dashed rgba(255,255,255,.14);border-radius:13px;color:var(--muted);font-size:10px;text-align:center}@media(max-width:1050px){.stats{grid-template-columns:repeat(2,1fr)}.card-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){.shell{padding:11px}.hero,.reset{flex-direction:column;align-items:flex-start}.hero-actions,.reset>div:last-child{width:100%;flex-wrap:wrap}.hero-actions .btn,.reset .btn{flex:1}.stats,.two-col,.quick-grid,.history-layout,.card-grid{grid-template-columns:1fr}.leader{grid-template-columns:36px 1fr .7fr .7fr}.leader .last{display:none}.dialog-grid,.check-grid{grid-template-columns:1fr}.hist{grid-template-columns:90px 1fr}.hist .type{display:none}}
+.js-check{
+  margin:7px 0 -3px;
+  padding:7px 10px;
+  border-radius:11px;
+  font-size:9px;
+  font-weight:900;
+  border:1px solid rgba(255,255,255,.10);
+}
+.js-check.good{background:#102d1c;color:#c9f0d6}
+.js-check.bad{background:#3a1b20;color:#ffd3da}
+
+
+.fatal-error{
+  margin:7px 0 -3px;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(255,150,165,.35);
+  background:#451c24;
+  color:#ffd7de;
+  font-size:10px;
+  line-height:1.5;
+  font-weight:800;
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+.hidden{display:none!important}
+</style>
+
+</head>
+<body>
+<div class="shell">
+<header class="hero">
+  <div class="brand"><div class="star">★</div><div><div class="eyebrow">THE ESCAPE ROOM FLORENCE</div><h1>Review Tracker</h1><p>One shared review race for the whole team.</p></div></div>
+  <div class="hero-actions"><button id="undoBtn" class="btn ghost">↶ Undo</button><button id="addReviewTopBtn" class="btn gold">+ Add Review</button><button id="newWeekTopBtn" class="btn secondary">Start New Week</button></div>
+</header>
+<div id="syncBanner" class="sync-banner"><span id="syncDot" class="sync-dot"></span><strong id="syncText">Starting…</strong><span id="syncDetail">Loading shared tracker</span></div>
+<div id="jsCheck" class="js-check bad">Checking JavaScript…</div><div id="fatalError" class="fatal-error hidden"></div>
+<nav class="tabs"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="employees">Employees</button><button class="tab" data-view="locations">Locations</button><button class="tab" data-view="history">History & Data</button></nav>
+<main>
+<section id="dashboard" class="view active">
+<div class="stats">
+<article class="stat featured"><span>Florence This Week</span><strong><b id="flGained">0</b><small> / <b id="flGoal">50</b></small></strong><div class="progress"><i id="flProgress"></i></div><footer><span>Started <b id="flStart">0</b></span><span>Current <b id="flCurrent">0</b></span></footer></article>
+<article class="stat"><span>Florence Google Total</span><strong id="currentTotalCard">0</strong><p>This number is independent from employee credit.</p></article>
+<article class="stat"><span>Weekly Leader</span><strong class="text" id="weeklyLeader">—</strong><p id="weeklyLeaderSub">No credited reviews yet.</p></article>
+<article class="stat"><span>Location Leader</span><strong class="text" id="locationLeader">—</strong><p id="locationLeaderSub">Waiting for the race to begin.</p></article>
+</div>
+<div class="two-col"><section class="panel"><div class="panel-head"><div><div class="kicker">EMPLOYEE RACE</div><h2>Weekly Leaderboard</h2></div></div><div id="employeeLeaderboard"></div></section><section class="panel"><div class="panel-head"><div><div class="kicker">LOCATION RACE</div><h2>Reviews Gained This Week</h2></div></div><div id="locationLeaderboard"></div></section></div>
+<section class="panel"><div class="panel-head"><div><div class="kicker">QUICK ACTIONS</div><h2>Florence Google Total</h2><p>Adjust the actual number of Google reviews independently from employee credit.</p></div><button id="reconcileBtn" class="btn secondary">Set Exact Google Total</button></div>
+<div class="quick-grid"><div class="quick"><div><b>Current Google Total</b><span>Use this once per actual review, even when multiple employees get credit.</span></div><div class="counter"><button id="totalMinus" class="round minus">−</button><strong id="totalQuick">0</strong><button id="totalPlus" class="round plus">+</button></div></div><div class="quick"><div><b>Weekly Goal</b><span>Change the competition goal.</span></div><div class="goal"><input id="goalInput" type="number" min="1"><button id="saveGoalBtn" class="btn gold small">Save</button></div></div></div></section>
+</section>
+<section id="employees" class="view"><section class="panel"><div class="panel-head"><div><div class="kicker">TEAM</div><h2>Employee Review Credit</h2><p>Employee +/− changes credit only. It does not change Florence's Google total.</p></div><div class="head-buttons"><button id="addReviewBtn" class="btn gold">+ Add Review</button><button id="addEmployeeBtn" class="btn secondary">+ Employee</button></div></div><div id="employeeCards" class="card-grid"></div></section><section class="panel reset"><div><div class="kicker">SEPARATE RESETS</div><h2>Weekly and Payroll Stay Independent</h2><p>Start New Week clears weekly credit. Clear Payroll clears payroll credit only.</p></div><div><button id="startWeekBtn" class="btn gold">Start New Week</button><button id="clearPayrollBtn" class="btn danger">Clear Payroll</button></div></section></section>
+<section id="locations" class="view"><section class="panel"><div class="panel-head"><div><div class="kicker">COMPETITION</div><h2>Location Totals</h2><p>Other locations only track their grand Google review totals.</p></div><button id="addLocationBtn" class="btn gold">+ Add Location</button></div><div id="locationCards" class="card-grid"></div></section></section>
+<section id="history" class="view"><div class="history-layout"><section class="panel"><div class="panel-head"><div><div class="kicker">CHANGE LOG</div><h2>History</h2></div><button id="exportCsvBtn" class="btn secondary">Export CSV</button></div><div id="changeHistory" class="scroll"></div></section><section class="panel"><div class="kicker">ARCHIVES</div><h2>Previous Weeks</h2><div id="weekArchives" class="scroll"></div></section><section class="panel"><div class="kicker">ARCHIVES</div><h2>Previous Payrolls</h2><div id="payrollArchives" class="scroll"></div></section><section class="panel"><div class="kicker">BACKUP</div><h2>Data & Restore</h2><div class="data-actions"><button id="backupBtn" class="btn secondary">Backup Data</button><label class="btn secondary file">Restore Backup<input id="restoreInput" type="file" accept=".json"></label><button id="resetAllBtn" class="btn danger">Reset Everything</button></div><p>Supabase is the shared source. A local cache is also kept in case the connection hiccups.</p></section></div></section>
+</main>
+<footer class="app-footer"><span>Escape Room Review Tracker v2.2.1</span><span id="saveStatus">Local cache ready</span></footer>
+</div>
+<dialog id="reviewDialog"><form method="dialog" class="dialog"><h2>Add One Google Review</h2><p class="dialog-copy">Florence increases by exactly 1. Select every employee mentioned in that same review and each selected person gets +1 credit.</p><div id="reviewEmployeeChoices" class="check-grid"></div><div class="dialog-actions"><button value="cancel" class="btn secondary">Cancel</button><button id="confirmAddReviewBtn" type="button" class="btn gold">Add Review</button></div></form></dialog>
+<dialog id="employeeDialog"><form method="dialog" class="dialog"><h2 id="employeeDialogTitle">Employee</h2><input id="employeeId" type="hidden"><label>Name<input id="employeeName"></label><div class="dialog-grid"><label>This Week<input id="employeeWeek" type="number" min="0"></label><label>This Payroll<input id="employeePayroll" type="number" min="0"></label><label>Overall<input id="employeeOverall" type="number" min="0"></label></div><div class="dialog-actions"><button value="cancel" class="btn secondary">Cancel</button><button id="saveEmployeeBtn" type="button" class="btn gold">Save</button></div></form></dialog>
+<dialog id="locationDialog"><form method="dialog" class="dialog"><h2 id="locationDialogTitle">Location</h2><input id="locationId" type="hidden"><label>Name<input id="locationName"></label><div class="dialog-grid"><label>Started This Week<input id="locationStart" type="number" min="0"></label><label>Current Google Total<input id="locationCurrent" type="number" min="0"></label><label>Goal<input id="locationGoal" type="number" min="1"></label></div><div class="dialog-actions"><button value="cancel" class="btn secondary">Cancel</button><button id="saveLocationBtn" type="button" class="btn gold">Save</button></div></form></dialog>
+<dialog id="reconcileDialog"><form method="dialog" class="dialog"><h2>Set Florence Google Total</h2><p class="dialog-copy">Type exactly what Google currently shows. Employee credit will not be changed.</p><label>Google currently shows<input id="reconcileTotal" type="number" min="0"></label><div class="dialog-actions"><button value="cancel" class="btn secondary">Cancel</button><button id="confirmReconcileBtn" type="button" class="btn gold">Set Total</button></div></form></dialog>
+
+
+<script>
+
+(function(){
+  var check = document.getElementById('jsCheck');
+  if (check) {
+    check.textContent = 'Core JavaScript is running. Starting tracker…';
+    check.className = 'js-check good';
+  }
+
+  function showFatal(message){
+    var box = document.getElementById('fatalError');
+    var status = document.getElementById('jsCheck');
+    if (status) {
+      status.textContent = 'JavaScript error detected.';
+      status.className = 'js-check bad';
+    }
+    if (box) {
+      box.className = 'fatal-error';
+      box.textContent = String(message || 'Unknown JavaScript error');
+    }
+  }
+
+  window.addEventListener('error', function(event){
+    showFatal(
+      (event.message || 'JavaScript error') +
+      (event.filename ? ' | ' + event.filename.split('/').pop() : '') +
+      (event.lineno ? ':' + event.lineno : '')
+    );
+  });
+
+  window.addEventListener('unhandledrejection', function(event){
+    var reason = event.reason && event.reason.message ? event.reason.message : event.reason;
+    showFatal('Promise error: ' + reason);
+  });
+
+  window.REVIEW_TRACKER_SHOW_FATAL = showFatal;
+})();
+
+</script>
+<script>
+// Escape Room Review Tracker - Supabase connection
+window.REVIEW_TRACKER_CONFIG = {
+  supabaseUrl: "https://rjgvysoupewymprnzwzl.supabase.co",
+  supabaseKey: "sb_publishable_l6bNl_bF1reAhhaLPZFToQ_QQpkjO_l",
+  trackerKey: "florence-review-tracker"
+};
+
+</script>
+<script>
+const KEY='escapeRoomReviewTracker.v213',MAX_UNDO=30,MAX_ARCHIVES=100;
+const initial={goal:50,florence:{start:0,current:0},employees:[{id:'tj',name:'TJ',week:0,payroll:0,overall:0},{id:'izzy',name:'Izzy',week:0,payroll:0,overall:0},{id:'justin',name:'Justin',week:0,payroll:0,overall:0},{id:'craigin',name:'Craigin',week:0,payroll:0,overall:0},{id:'charlie',name:'Charlie',week:0,payroll:0,overall:0}],locations:[{id:'stage',name:'Stage Road',start:0,current:0,goal:50},{id:'south',name:'South Main',start:0,current:0,goal:50},{id:'east',name:'East Memphis',start:0,current:0,goal:50},{id:'amuse',name:'Amuse Adventure Museum',start:0,current:0,goal:50},{id:'gnl',name:'Game Nite Lounge',start:0,current:0,goal:50}],history:[],weekArchives:[],payrollArchives:[]};
+const $=id=>document.getElementById(id);
+function clone(v){return JSON.parse(JSON.stringify(v))}
+function uid(p){return `${p}_${Math.random().toString(36).slice(2,9)}${Date.now().toString(36).slice(-4)}`}
+let state=loadLocal(),undo=[],remoteUpdatedAt='',saveTimer=null,pollTimer=null,remoteReady=false,isSaving=false;
+function safeText(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function normalize(x){const s={...clone(initial),...(x||{})};s.florence={...initial.florence,...(x?.florence||{})};delete s.florence.uncredited;s.employees=Array.isArray(x?.employees)?x.employees:clone(initial.employees);s.locations=Array.isArray(x?.locations)?x.locations:clone(initial.locations);s.history=Array.isArray(x?.history)?x.history:[];s.weekArchives=Array.isArray(x?.weekArchives)?x.weekArchives:[];s.payrollArchives=Array.isArray(x?.payrollArchives)?x.payrollArchives:[];return s}
+function loadLocal(){try{const x=JSON.parse(localStorage.getItem(KEY));return normalize(x)}catch{return clone(initial)}}
+function cache(){localStorage.setItem(KEY,JSON.stringify(state));$('saveStatus').textContent='Local cache • '+new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}
+function log(type,description){const d=new Date();state.history.unshift({date:d.toLocaleDateString(),time:d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}),type,description});state.history=state.history.slice(0,1000)}
+function before(label){undo.push({label,state:clone(state)});if(undo.length>MAX_UNDO)undo.shift()}
+function commit(label,type,description,fn){before(label);fn();log(type,description);cache();render();queueRemoteSave()}
+function gained(a,b){return Math.max(0,+b-+a)} function pct(n,g){return Math.min(100,Math.round(+n/Math.max(1,+g)*100))}
+function employee(id){return state.employees.find(x=>x.id===id)} function getLocation(id){return state.locations.find(x=>x.id===id)}
+function setSync(mode,text,detail=''){const dot=$('syncDot');dot.className='sync-dot '+(mode||'');$('syncText').textContent=text;$('syncDetail').textContent=detail}
+function cfg(){return window.REVIEW_TRACKER_CONFIG||{}}
+function configured(){const c=cfg();return /^https:\/\/.+\.supabase\.co$/i.test(c.supabaseUrl||'') && c.supabaseKey && !String(c.supabaseKey).includes('PASTE_')}
+function headers(extra={}){const c=cfg();return {'apikey':c.supabaseKey,'Content-Type':'application/json',...extra}}
+function endpoint(){const c=cfg();return `${c.supabaseUrl}/rest/v1/review_tracker?tracker_key=eq.${encodeURIComponent(c.trackerKey||'florence-review-tracker')}`}
+async function fetchRemote(){if(!configured()){setSync('bad','Supabase config needed','Buttons still work locally. Fill in config.js to share data.');return false}try{setSync('','Connecting…','Loading shared tracker');const r=await fetch(endpoint()+'&select=data,updated_at',{headers:headers()});if(!r.ok)throw Error(`Supabase ${r.status}: ${await r.text()}`);const rows=await r.json();if(!rows.length)throw Error('Shared tracker row was not found.');const row=rows[0];if(row.data&&Object.keys(row.data).length){state=normalize(row.data);cache();render()}else{await saveRemote(true)}remoteUpdatedAt=row.updated_at||remoteUpdatedAt;remoteReady=true;setSync('good','Shared & synced','Everyone opening the link uses this same tracker.');return true}catch(err){console.error(err);setSync('bad','Supabase unavailable',String(err.message||err).slice(0,180));return false}}
+function queueRemoteSave(){clearTimeout(saveTimer);saveTimer=setTimeout(()=>saveRemote(false),180)}
+async function saveRemote(force=false){if(!configured()){setSync('bad','Local only','Add your Supabase details to config.js.');return false}if(isSaving&&!force)return false;isSaving=true;try{setSync('','Saving…','Sending this change to the shared tracker');const body={data:state,updated_at:new Date().toISOString()};const r=await fetch(endpoint()+'&select=updated_at',{method:'PATCH',headers:headers({'Prefer':'return=representation'}),body:JSON.stringify(body)});if(!r.ok)throw Error(`Supabase ${r.status}: ${await r.text()}`);const rows=await r.json();if(rows[0]?.updated_at)remoteUpdatedAt=rows[0].updated_at;remoteReady=true;setSync('good','Synced','Shared change saved');return true}catch(err){console.error(err);setSync('bad','Saved locally, not shared',String(err.message||err).slice(0,180));return false}finally{isSaving=false}}
+async function pollRemote(){if(!configured()||isSaving)return;try{const r=await fetch(endpoint()+'&select=data,updated_at',{headers:headers()});if(!r.ok)return;const rows=await r.json(),row=rows[0];if(row?.updated_at&&row.updated_at!==remoteUpdatedAt){remoteUpdatedAt=row.updated_at;if(row.data){state=normalize(row.data);cache();render();setSync('good','Updated','Received a change from another device')}}}catch{}}
+function setView(v){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===v));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.view===v))}
+function bindStatic(){document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));$('addReviewTopBtn').addEventListener('click',openReview);$('addReviewBtn').addEventListener('click',openReview);$('addEmployeeBtn').addEventListener('click',()=>openEmployee());$('addLocationBtn').addEventListener('click',()=>openLocation());$('totalPlus').addEventListener('click',()=>adjustFlorence(1));$('totalMinus').addEventListener('click',()=>adjustFlorence(-1));$('saveGoalBtn').addEventListener('click',saveGoal);$('reconcileBtn').addEventListener('click',()=>{$('reconcileTotal').value=state.florence.current;$('reconcileDialog').showModal()});$('confirmReconcileBtn').addEventListener('click',reconcile);$('startWeekBtn').addEventListener('click',newWeek);$('newWeekTopBtn').addEventListener('click',newWeek);$('clearPayrollBtn').addEventListener('click',clearPayroll);$('undoBtn').addEventListener('click',doUndo);$('saveEmployeeBtn').addEventListener('click',saveEmployee);$('saveLocationBtn').addEventListener('click',saveLocation);$('confirmAddReviewBtn').addEventListener('click',confirmAddReview);$('exportCsvBtn').addEventListener('click',exportCsv);$('backupBtn').addEventListener('click',backup);$('restoreInput').addEventListener('change',restore);$('resetAllBtn').addEventListener('click',resetAll)}
+function render(){dashboard();employees();locations();history();$('undoBtn').disabled=!undo.length;$('undoBtn').textContent=undo.length?'↶ Undo: '+undo.at(-1).label:'↶ Undo'}
+function dashboard(){const fg=gained(state.florence.start,state.florence.current);$('flGained').textContent=fg;$('flGoal').textContent=state.goal;$('flStart').textContent=state.florence.start;$('flCurrent').textContent=state.florence.current;$('currentTotalCard').textContent=state.florence.current;$('totalQuick').textContent=state.florence.current;$('flProgress').style.width=pct(fg,state.goal)+'%';$('goalInput').value=state.goal;const es=[...state.employees].sort((a,b)=>b.week-a.week||a.name.localeCompare(b.name)),el=es[0];$('weeklyLeader').textContent=el&&el.week?el.name:'—';$('weeklyLeaderSub').textContent=el&&el.week?`${el.week} credit${el.week===1?'':'s'} this week`:'No credited reviews yet.';const ls=[{name:'Florence',start:state.florence.start,current:state.florence.current,goal:state.goal},...state.locations].map(l=>({...l,gained:gained(l.start,l.current)})).sort((a,b)=>b.gained-a.gained||a.name.localeCompare(b.name));$('locationLeader').textContent=ls[0].gained?ls[0].name:'—';$('locationLeaderSub').textContent=ls[0].gained?`+${ls[0].gained} reviews this week`:'Waiting for the race to begin.';$('employeeLeaderboard').innerHTML=es.map((e,i)=>`<div class="leader"><div class="rank">${i+1}</div><div class="name">${safeText(e.name)}</div><div><div class="ml">Weekly</div><div class="mv gain">${e.week}</div></div><div><div class="ml">Payroll</div><div class="mv">${e.payroll}</div></div><div class="last"><div class="ml">Overall</div><div class="mv">${e.overall}</div></div></div>`).join('');$('locationLeaderboard').innerHTML=ls.map((l,i)=>`<div class="leader"><div class="rank">${i+1}</div><div class="name">${safeText(l.name)}</div><div><div class="ml">Gained</div><div class="mv gain">+${l.gained}</div></div><div><div class="ml">Current</div><div class="mv">${l.current}</div></div><div class="last"><div class="ml">Goal</div><div class="mv">${l.goal}</div></div></div>`).join('')}
+function employees(){$('employeeCards').innerHTML=state.employees.map(e=>`<article class="card"><h3>${safeText(e.name)}</h3><div class="counts"><div class="count"><span>Week</span><strong>${e.week}</strong></div><div class="count"><span>Payroll</span><strong>${e.payroll}</strong></div><div class="count"><span>Overall</span><strong>${e.overall}</strong></div></div><div class="card-actions"><button class="round minus eminus" data-id="${e.id}">−</button><button class="round plus eplus" data-id="${e.id}">+</button><button class="btn secondary small eedit" data-id="${e.id}">Edit</button></div></article>`).join('');document.querySelectorAll('.eplus').forEach(b=>b.onclick=()=>adjustEmployee(b.dataset.id,1));document.querySelectorAll('.eminus').forEach(b=>b.onclick=()=>adjustEmployee(b.dataset.id,-1));document.querySelectorAll('.eedit').forEach(b=>b.onclick=()=>openEmployee(b.dataset.id))}
+function adjustEmployee(id,d){const e=employee(id);if(!e||d<0&&(e.week<=0||e.payroll<=0||e.overall<=0))return;commit(`${d>0?'+1':'-1'} ${e.name}`,'Employee Credit',`${d>0?'+1':'-1'} review credit for ${e.name}`,()=>{e.week+=d;e.payroll+=d;e.overall+=d})}
+function adjustFlorence(d){if(d<0&&state.florence.current<=0)return;commit(`${d>0?'+1':'-1'} Florence total`,'Florence Total',`${d>0?'+1':'-1'} actual Florence Google review`,()=>state.florence.current=Math.max(0,+state.florence.current+d))}
+function openReview(){$('reviewEmployeeChoices').innerHTML=state.employees.map(e=>`<label class="check-item"><input type="checkbox" class="review-check" value="${e.id}"><span>${safeText(e.name)}</span></label>`).join('');$('reviewDialog').showModal()}
+function confirmAddReview(){const ids=[...document.querySelectorAll('.review-check:checked')].map(x=>x.value),names=ids.map(id=>employee(id)?.name).filter(Boolean);commit('Add one review','Review',`+1 Florence review${names.length?' • Credit: '+names.join(', '):' • No employee credit'}`,()=>{state.florence.current+=1;ids.forEach(id=>{const e=employee(id);if(e){e.week++;e.payroll++;e.overall++}})});$('reviewDialog').close()}
+function openEmployee(id=''){const e=id?employee(id):null;$('employeeDialogTitle').textContent=e?'Edit Employee':'Add Employee';$('employeeId').value=e?.id||'';$('employeeName').value=e?.name||'';$('employeeWeek').value=e?.week??0;$('employeePayroll').value=e?.payroll??0;$('employeeOverall').value=e?.overall??0;$('employeeDialog').showModal()}
+function saveEmployee(){const id=$('employeeId').value||uid('emp'),name=$('employeeName').value.trim();if(!name)return;const x={id,name,week:Math.max(0,+$('employeeWeek').value||0),payroll:Math.max(0,+$('employeePayroll').value||0),overall:Math.max(0,+$('employeeOverall').value||0)},i=state.employees.findIndex(e=>e.id===id);commit(i>=0?'Edit '+name:'Add '+name,'Employee Edit',i>=0?`Edited credit totals for ${name}`:`Added employee ${name}`,()=>{if(i>=0)state.employees[i]=x;else state.employees.push(x)});$('employeeDialog').close()}
+function locations(){$('locationCards').innerHTML=state.locations.map(l=>{const g=gained(l.start,l.current);return `<article class="card"><h3>${safeText(l.name)}</h3><div class="counts"><div class="count"><span>Started</span><strong>${l.start}</strong></div><div class="count"><span>Current</span><strong>${l.current}</strong></div><div class="count"><span>Gained</span><strong class="gain">+${g}</strong></div></div><div class="loc-progress"><div class="progress"><i style="width:${pct(g,l.goal)}%"></i></div><div class="loc-sub"><span>${g} / ${l.goal}</span><span>${pct(g,l.goal)}%</span></div></div><div class="card-actions"><button class="round minus lminus" data-id="${l.id}">−</button><button class="round plus lplus" data-id="${l.id}">+</button><button class="btn secondary small ledit" data-id="${l.id}">Edit Totals</button></div></article>`}).join('');document.querySelectorAll('.lplus').forEach(b=>b.onclick=()=>adjustLocation(b.dataset.id,1));document.querySelectorAll('.lminus').forEach(b=>b.onclick=()=>adjustLocation(b.dataset.id,-1));document.querySelectorAll('.ledit').forEach(b=>b.onclick=()=>openLocation(b.dataset.id))}
+function adjustLocation(id,d){const l=getLocation(id);if(!l||d<0&&l.current<=0)return;commit(`${d>0?'+1':'-1'} ${l.name}`,'Location Review',`${d>0?'+1':'-1'} ${l.name} review`,()=>l.current=Math.max(0,+l.current+d))}
+function openLocation(id=''){const l=id?getLocation(id):null;$('locationDialogTitle').textContent=l?'Edit Location':'Add Location';$('locationId').value=l?.id||'';$('locationName').value=l?.name||'';$('locationStart').value=l?.start??0;$('locationCurrent').value=l?.current??0;$('locationGoal').value=l?.goal??state.goal;$('locationDialog').showModal()}
+function saveLocation(){const id=$('locationId').value||uid('loc'),name=$('locationName').value.trim();if(!name)return;const x={id,name,start:Math.max(0,+$('locationStart').value||0),current:Math.max(0,+$('locationCurrent').value||0),goal:Math.max(1,+$('locationGoal').value||state.goal)},i=state.locations.findIndex(l=>l.id===id);commit(i>=0?'Edit '+name:'Add '+name,'Location Edit',i>=0?`Edited totals for ${name}`:`Added location ${name}`,()=>{if(i>=0)state.locations[i]=x;else state.locations.push(x)});$('locationDialog').close()}
+function saveGoal(){const g=Math.max(1,+$('goalInput').value||50);commit('Change goal','Goal Change',`Changed goal from ${state.goal} to ${g}`,()=>state.goal=g)}
+function reconcile(){const actual=Math.max(0,+$('reconcileTotal').value||0),old=state.florence.current;if(actual!==old)commit('Set Florence total','Reconcile',`Set Florence Google total from ${old} to ${actual}`,()=>state.florence.current=actual);$('reconcileDialog').close()}
+function newWeek(){if(!confirm('Start a new week? Weekly employee credit clears. Payroll and overall stay.'))return;commit('Weekly reset','Weekly Reset','Started a new review week',()=>{state.weekArchives.unshift({date:new Date().toISOString(),florence:{start:state.florence.start,end:state.florence.current,gained:gained(state.florence.start,state.florence.current)},employees:clone(state.employees.map(e=>({name:e.name,week:e.week}))),locations:clone(state.locations.map(l=>({name:l.name,start:l.start,end:l.current,gained:gained(l.start,l.current)})))});state.weekArchives=state.weekArchives.slice(0,MAX_ARCHIVES);state.florence.start=state.florence.current;state.employees.forEach(e=>e.week=0);state.locations.forEach(l=>l.start=l.current)})}
+function clearPayroll(){if(!confirm('Clear payroll totals only? Weekly and overall stay.'))return;commit('Payroll reset','Payroll Reset','Cleared employee payroll totals',()=>{state.payrollArchives.unshift({date:new Date().toISOString(),employees:clone(state.employees.map(e=>({name:e.name,payroll:e.payroll})))});state.payrollArchives=state.payrollArchives.slice(0,MAX_ARCHIVES);state.employees.forEach(e=>e.payroll=0)})}
+function doUndo(){const u=undo.pop();if(!u)return;state=u.state;log('Undo','Undid: '+u.label);cache();render();queueRemoteSave()}
+function history(){$('changeHistory').innerHTML=state.history.length?state.history.map(h=>`<div class="hist"><div class="time">${safeText(h.date)}<br>${safeText(h.time)}</div><div class="type">${safeText(h.type)}</div><div>${safeText(h.description)}</div></div>`).join(''):'<div class="empty">No changes yet.</div>';$('weekArchives').innerHTML=state.weekArchives.length?state.weekArchives.map(w=>`<div class="archive"><strong>${new Date(w.date).toLocaleDateString()} • Florence +${w.florence.gained}</strong><span>${w.employees.map(e=>`${safeText(e.name)}: ${e.week}`).join(' • ')}</span><span>${w.locations.map(l=>`${safeText(l.name)}: +${l.gained}`).join(' • ')}</span></div>`).join(''):'<div class="empty">No weekly archives yet.</div>';$('payrollArchives').innerHTML=state.payrollArchives.length?state.payrollArchives.map(p=>`<div class="archive"><strong>${new Date(p.date).toLocaleDateString()}</strong><span>${p.employees.map(e=>`${safeText(e.name)}: ${e.payroll}`).join(' • ')}</span></div>`).join(''):'<div class="empty">No payroll archives yet.</div>'}
+function dl(name,text,type){const b=new Blob([text],{type}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(u)}
+function exportCsv(){const rows=[['Date','Time','Type','Description'],...[...state.history].reverse().map(h=>[h.date,h.time,h.type,h.description])],csv=rows.map(r=>r.map(v=>`"${String(v??'').replaceAll('"','""')}"`).join(',')).join('\r\n');dl('review-history.csv',csv,'text/csv');log('Export','Exported history CSV');cache();render();queueRemoteSave()}
+function backup(){dl('review-tracker-backup.json',JSON.stringify(state,null,2),'application/json');log('Backup','Exported data backup');cache();render();queueRemoteSave()}
+async function restore(e){const f=e.target.files?.[0];if(!f)return;try{const x=normalize(JSON.parse(await f.text()));if(confirm('Replace the shared tracker with this backup?')){before('Restore backup');state=x;log('Restore','Restored backup');cache();render();await saveRemote(true)}}catch(err){alert(err.message||err)}e.target.value=''}
+function resetAll(){if(confirm('Reset EVERYTHING?')&&confirm('Really reset all totals, history, employees, and archives?'))commit('Reset everything','Reset','Reset all tracker data',()=>state=clone(initial))}
+function startup(){
+  const jsCheck=$('jsCheck');
+  if(jsCheck){
+    jsCheck.textContent='JavaScript is running. Buttons are active.';
+    jsCheck.className='js-check good';
+  }
+  bindStatic();
+  render();
+  cache();
+  fetchRemote();
+  pollTimer=setInterval(pollRemote,3000)
+}
+
+
+
+try {
+  startup();
+} catch (err) {
+  console.error(err);
+  if (window.REVIEW_TRACKER_SHOW_FATAL) {
+    window.REVIEW_TRACKER_SHOW_FATAL(
+      (err && err.name ? err.name + ': ' : '') +
+      (err && err.message ? err.message : String(err))
+    );
+  }
+}
+
+</script>
+</body></html>
