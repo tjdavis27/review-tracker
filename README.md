@@ -1,30 +1,30 @@
-# Escape Room Review Tracker v2.2.1
+# Escape Room Review Tracker v2.2.2 - Rating Fix
 
-## Fix in this version
+## What changed
 
-The browser reserves `location` as a global name (`window.location`).
+`Add Review` now asks for the star rating.
 
-v2.2.0 also declared a helper named `location()`, which caused:
+- 5 stars: Florence Google total +1 and selected employees receive +1 weekly/payroll/overall 5-star credit.
+- 4, 3, 2, or 1 star: Florence Google total +1 and no employee 5-star credit is added.
 
-`Uncaught SyntaxError: Identifier 'location' has already been declared`
+The change history records the actual rating.
 
-v2.2.1 renames that helper to `getLocation()` everywhere.
+## Existing data is preserved
 
-## Test
+This build intentionally keeps the exact same browser storage key:
 
-1. Close old tracker test windows.
-2. Extract the ZIP.
-3. Double-click `TEST-LOCAL.bat`.
-4. It opens on:
-   `http://127.0.0.1:8878/?v=221`
+`escapeRoomReviewTracker.v213`
 
-The page should show:
+It also keeps the same Supabase configuration, table, tracker key, and state structure.
+No totals, employees, location data, archives, or history are reset or converted.
 
-`JavaScript is running. Buttons are active.`
+For extra protection, the first load creates a separate one-time local safety snapshot at:
 
-If a browser error still occurs, the red error box will show the exact message.
+`escapeRoomReviewTracker.preRatingFixBackup.v222`
 
-## GitHub
+The safety snapshot is never used as the active tracker and does not overwrite existing data.
 
-Once confirmed working, upload `index.html`.
-Your Supabase URL and publishable key remain embedded.
+## Clarified labels
+
+Employee totals are now explicitly described as 5-star review credit.
+Florence and location Google totals still represent all actual Google reviews regardless of rating.

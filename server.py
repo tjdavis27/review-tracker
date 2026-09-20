@@ -10,7 +10,7 @@ from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
 HOST = "127.0.0.1"
 PORT = 8878
-URL = f"http://{HOST}:{PORT}/?v=221"
+URL = f"http://{HOST}:{PORT}/?v=222"
 
 class NoCacheHandler(SimpleHTTPRequestHandler):
     def end_headers(self):
@@ -70,7 +70,7 @@ if __name__ == "__main__":
 
     print()
     print("============================================================")
-    print("   Escape Room Review Tracker v2.2.1 - LOCATION FIX TEST")
+    print("   Escape Room Review Tracker v2.2.2 - LOCATION FIX TEST")
     print("============================================================")
     print()
     print("SERVER READY:", URL)
