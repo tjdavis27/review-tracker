@@ -1,41 +1,43 @@
-# Escape Room Review Tracker v2.2.4
+# Escape Room Review Tracker v2.2.5
 
-## Correct review-counting rule
+## Fixed: lower-rated reviews increasing the weekly 5-star count
 
-The tracker now separates the actual Google review total from 5-star competition
-credit.
+The weekly 5-star number is now a completely separate counter.
 
-### Any Google review (1-5 stars)
+### Any Google review
 - Florence Total Reviews +1
 
-### 5-star review only
+### 5-star review
+- Florence Total Reviews +1
 - Florence 5-Star Reviews This Week +1
 - Selected employee Weekly +1
 - Selected employee Payroll +1
 - Selected employee Overall +1
-- Selected employee competition credit +1
 
-### 4-star or lower
+### 1-4 star review
 - Florence Total Reviews +1
 - Florence 5-Star Reviews This Week does NOT change
 - Employee Weekly does NOT change
 - Employee Payroll does NOT change
 - Employee Overall does NOT change
-- Employee credit does NOT change
 
-## Labels
+## Existing data is preserved and current week is repaired
 
-`Florence Total Reviews` means ALL Google reviews.
+The app keeps the exact same localStorage and Supabase keys.
 
-Weekly/payroll/overall employee counts remain 5-star competition counts.
+On first load of v2.2.5, it performs a non-destructive one-time repair:
+- Starts with the existing all-review gain for the current week.
+- Finds lower-rated reviews already logged during the current week.
+- Subtracts only those lower-rated reviews from the new 5-star weekly counter.
 
-## Existing data is preserved
+It does not reset the Florence total, employee totals, locations, history,
+archives, payroll counts, or overall counts.
 
-This version keeps the exact same:
-- localStorage key: `escapeRoomReviewTracker.v213`
-- Supabase tracker key: `florence-review-tracker`
-- employee, location, history, archive, and total structures
+## Weekly reset
 
-A new optional `fiveStarWeek` field is added non-destructively to the existing
-Florence state so lower-rated reviews can increase the overall total without
-increasing the weekly 5-star count.
+Start New Week now archives:
+- Florence 5-star reviews gained
+- Florence total reviews gained
+
+Then only the 5-star weekly counter is reset to zero. The overall Google total
+continues normally.
