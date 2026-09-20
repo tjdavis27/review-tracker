@@ -1,30 +1,37 @@
-# Escape Room Review Tracker v2.2.2 - Rating Fix
+# Escape Room Review Tracker v2.2.3
 
-## What changed
+## Five-star-only competition fix
 
-`Add Review` now asks for the star rating.
+Only 5-star reviews count toward tracker totals.
 
-- 5 stars: Florence Google total +1 and selected employees receive +1 weekly/payroll/overall 5-star credit.
-- 4, 3, 2, or 1 star: Florence Google total +1 and no employee 5-star credit is added.
+### 5-star review
+- Florence 5-Star Total +1
+- Florence 5-Star Reviews This Week +1
+- Selected employees: Weekly +1
+- Selected employees: Payroll +1
+- Selected employees: Overall +1
 
-The change history records the actual rating.
+### 4-star or lower
+- Florence total does not change
+- Reviews This Week does not change
+- Employee Weekly does not change
+- Employee Payroll does not change
+- Employee Overall does not change
+- Competition progress does not change
+
+A lower-rated review is only written to History as `Not Counted` so it can be
+noted without affecting any numbers.
 
 ## Existing data is preserved
 
-This build intentionally keeps the exact same browser storage key:
+This release intentionally keeps the exact same:
+- localStorage data key: `escapeRoomReviewTracker.v213`
+- Supabase tracker key: `florence-review-tracker`
+- state/data schema
 
-`escapeRoomReviewTracker.v213`
+No totals, employees, history, archives, locations, or existing records are
+cleared or migrated.
 
-It also keeps the same Supabase configuration, table, tracker key, and state structure.
-No totals, employees, location data, archives, or history are reset or converted.
-
-For extra protection, the first load creates a separate one-time local safety snapshot at:
-
-`escapeRoomReviewTracker.preRatingFixBackup.v222`
-
-The safety snapshot is never used as the active tracker and does not overwrite existing data.
-
-## Clarified labels
-
-Employee totals are now explicitly described as 5-star review credit.
-Florence and location Google totals still represent all actual Google reviews regardless of rating.
+If a lower-rated review was already added in v2.2.2, v2.2.3 will not silently
+alter your existing totals. Use Undo (if still available) or subtract that one
+review manually from Florence once.
